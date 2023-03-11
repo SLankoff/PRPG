@@ -1,0 +1,45 @@
+{
+  "title": "The Pokemon RPG",
+  "id": "prpg",
+  "system": "custom-system-builder",
+  "coreVersion": "10.291",
+  "esmodules": [
+    "assets/types.js"
+  ],
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10"
+  },
+  "systemVersion": "2.2.4",
+  "description": "<p>Put together out of Custom System Builder for the PRPG community.</p><p></p><p>Pokemon sprites 100% from the PTU system available <a href=\"https://github.com/dylanpiera/Foundry-Pokemon-Tabletop-United-System\">Here!</a></p><p></p><p>Trainer sprites 100% from the Pokemon Wiki <a href=\"https://pokemon.fandom.com/wiki/Pok%C3%A9mon_Wiki\">Here!</a></p><p></p><p>Pokemon Type CSS block from justingolden21 <a href=\"https://github.com/justingolden21/pokemon-types-css\">Here!</a></p>",
+  "background": "https://isaacostlund.io/wp-content/uploads/2020/05/grasslands-OG2.png",
+  "packs": [
+    {
+      "label": "Pokemon",
+      "type": "Actor",
+      "name": "pokemon",
+      "path": "packs/pokemon.db",
+      "system": "custom-system-builder",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Named Trainers",
+      "type": "Actor",
+      "name": "named-trainers",
+      "path": "packs/named-trainers.db",
+      "system": "custom-system-builder",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Trainer Classes",
+      "type": "Actor",
+      "name": "trainer-classes",
+      "path": "packs/trainer-classes.db",
+      "system": "custom-system-builder",
+      "private": false,
+      "flags": {}
+    }
+  ]
+}
