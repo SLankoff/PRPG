@@ -18,5 +18,12 @@ Furthermore, I've added the icons for medicines, Pokeballs, and held items onto 
 I've also updated the battle script to check these resistances as well as provide feedback as to who is affected.
 ![New script menu](https://cdn.discordapp.com/attachments/723454625671282704/1084274869367222342/image.png)
 
+## Installation
+
+In the "Install world" prompt in Foundry, insert the manifest URL
+
+https://raw.githubusercontent.com/SLankoff/PRPG/main/world.json
+
+
 
 
