@@ -1,6 +1,8 @@
 # pkrpg
 The Pokemon RPG, built out of Custom System Builder for Foundry
 
+## Requirements
+Foundry V10 , Custom System Builder, [Compendium Folders Add-on](https://foundryvtt.com/packages/compendium-folders/) and, recommended, [Combat Utility Belt](https://foundryvtt.com/packages/combat-utility-belt)
 ## Changes
 
 Well look at us, we're on GitHub now! Probably. It'll PROBABLY work.
