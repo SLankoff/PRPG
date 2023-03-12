@@ -16,7 +16,7 @@ Furthermore, I've added the icons for medicines, Pokeballs, and held items onto 
 ![Pokemon items](https://cdn.discordapp.com/attachments/723454625671282704/1084274749024243742/image.png)
 
 I've also updated the battle script to check these resistances as well as provide feedback as to who is affected.
-[!New script menu](https://cdn.discordapp.com/attachments/723454625671282704/1084274869367222342/image.png)
+![New script menu](https://cdn.discordapp.com/attachments/723454625671282704/1084274869367222342/image.png)
 
 
 
