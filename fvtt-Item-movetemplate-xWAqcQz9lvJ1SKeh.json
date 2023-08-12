@@ -12,6 +12,7 @@
           "role": "0",
           "permission": "0",
           "tooltip": "",
+          "visibilityFormula": null,
           "contents": [
             {
               "key": "type",
@@ -19,6 +20,7 @@
               "role": "0",
               "permission": "0",
               "tooltip": "",
+              "visibilityFormula": null,
               "label": "Type: ",
               "defaultValue": "Normal",
               "size": "full-size",
@@ -32,6 +34,7 @@
               "role": "0",
               "permission": "0",
               "tooltip": "",
+              "visibilityFormula": null,
               "label": "Availability",
               "defaultValue": "At-Will",
               "size": "full-size",
@@ -45,6 +48,7 @@
               "role": "0",
               "permission": "0",
               "tooltip": "",
+              "visibilityFormula": null,
               "label": "Attack Modifier",
               "defaultValue": "+2",
               "size": "full-size",
@@ -65,7 +69,8 @@
       "tooltip": null,
       "flow": null,
       "align": null,
-      "type": "panel"
+      "type": "panel",
+      "visibilityFormula": null
     },
     "body": {
       "contents": [
@@ -75,6 +80,7 @@
           "role": "0",
           "permission": "0",
           "tooltip": "",
+          "visibilityFormula": null,
           "contents": [
             {
               "key": "damage",
@@ -82,12 +88,104 @@
               "role": "0",
               "permission": "0",
               "tooltip": "",
+              "visibilityFormula": "",
               "label": "Damage",
-              "defaultValue": "2d8",
+              "defaultValue": "",
               "size": "full-size",
-              "charList": "",
-              "maxLength": "",
-              "type": "textField"
+              "options": [
+                {
+                  "key": "1",
+                  "value": "1d10 (1)"
+                },
+                {
+                  "key": "2",
+                  "value": "1d12 (2)"
+                },
+                {
+                  "key": "3",
+                  "value": "2d6 (3)"
+                },
+                {
+                  "key": "4",
+                  "value": "2d8 (4)"
+                },
+                {
+                  "key": "5",
+                  "value": "2d12 (5)"
+                },
+                {
+                  "key": "6",
+                  "value": "4d8 (6)"
+                },
+                {
+                  "key": "7",
+                  "value": "4d12 (7)"
+                },
+                {
+                  "key": "8",
+                  "value": "3d10x2 (8)"
+                },
+                {
+                  "key": "9",
+                  "value": "3d12x2 (9)"
+                },
+                {
+                  "key": "10",
+                  "value": "4d10x2 (10)"
+                },
+                {
+                  "key": "11",
+                  "value": "4d12x2 (11)"
+                },
+                {
+                  "key": "12",
+                  "value": "5d10x2 (12)"
+                },
+                {
+                  "key": "13",
+                  "value": "3d12x3 (13)"
+                },
+                {
+                  "key": "14",
+                  "value": "5d12x2 (14)"
+                },
+                {
+                  "key": "15",
+                  "value": "5d8x3 (15)"
+                },
+                {
+                  "key": "16",
+                  "value": "8d8x2 (16)"
+                },
+                {
+                  "key": "17",
+                  "value": "6d12x2 (17)"
+                },
+                {
+                  "key": "18",
+                  "value": "6d6x4 (18)"
+                },
+                {
+                  "key": "19",
+                  "value": "5d8x4 (19)"
+                },
+                {
+                  "key": "20",
+                  "value": "6d10x3 (20)"
+                },
+                {
+                  "key": "21",
+                  "value": "8d8x3 (21)"
+                },
+                {
+                  "key": "22",
+                  "value": "6d12x3 (22)"
+                }
+              ],
+              "tableKey": null,
+              "tableKeyColumn": null,
+              "tableLabelColumn": null,
+              "type": "select"
             },
             {
               "key": "kind",
@@ -95,6 +193,7 @@
               "role": "0",
               "permission": "0",
               "tooltip": "",
+              "visibilityFormula": null,
               "label": "Kind",
               "defaultValue": "Physical",
               "size": "full-size",
@@ -108,6 +207,7 @@
               "role": "0",
               "permission": "0",
               "tooltip": "",
+              "visibilityFormula": null,
               "label": "Range",
               "defaultValue": "Melee",
               "size": "full-size",
@@ -126,13 +226,12 @@
           "role": "0",
           "permission": "0",
           "tooltip": "",
+          "visibilityFormula": null,
           "label": "Description",
           "defaultValue": "",
           "size": "m-large",
-          "charList": "",
-          "maxLength": "",
-          "type": "textArea",
-          "style": "sheet"
+          "style": "sheet",
+          "type": "textArea"
         },
         {
           "key": "effect",
@@ -140,13 +239,12 @@
           "role": "0",
           "permission": "0",
           "tooltip": "",
+          "visibilityFormula": null,
           "label": "Effect",
           "defaultValue": "",
           "size": "m-large",
-          "charList": "",
-          "maxLength": "",
-          "type": "textArea",
-          "style": "sheet"
+          "style": "sheet",
+          "type": "textArea"
         }
       ],
       "key": "custom_body",
@@ -156,7 +254,8 @@
       "tooltip": null,
       "flow": null,
       "align": null,
-      "type": "panel"
+      "type": "panel",
+      "visibilityFormula": null
     },
     "display": {
       "width": "1200",
@@ -165,27 +264,405 @@
       "pp_width": "64",
       "pp_height": "64"
     },
-    "templateSystemUniqueVersion": 2075446994
+    "templateSystemUniqueVersion": 3523943647
   },
   "effects": [],
   "folder": "2H6VoV8Q4jQwZt8Y",
   "flags": {
     "custom-system-builder": {
-      "version": "2.3.1"
+      "version": "2.3.1",
+      "templateHistory": [
+        [
+          {
+            "kind": "N",
+            "path": [
+              "header",
+              "contents",
+              0,
+              "contents",
+              2,
+              "visibilityFormula"
+            ],
+            "rhs": null
+          },
+          {
+            "kind": "N",
+            "path": [
+              "header",
+              "contents",
+              0,
+              "contents",
+              1,
+              "visibilityFormula"
+            ],
+            "rhs": null
+          },
+          {
+            "kind": "N",
+            "path": [
+              "header",
+              "contents",
+              0,
+              "contents",
+              0,
+              "visibilityFormula"
+            ],
+            "rhs": null
+          },
+          {
+            "kind": "N",
+            "path": [
+              "header",
+              "contents",
+              0,
+              "visibilityFormula"
+            ],
+            "rhs": null
+          },
+          {
+            "kind": "N",
+            "path": [
+              "header",
+              "visibilityFormula"
+            ],
+            "rhs": null
+          },
+          {
+            "kind": "D",
+            "path": [
+              "body",
+              "contents",
+              2,
+              "charList"
+            ],
+            "lhs": ""
+          },
+          {
+            "kind": "D",
+            "path": [
+              "body",
+              "contents",
+              2,
+              "maxLength"
+            ],
+            "lhs": ""
+          },
+          {
+            "kind": "N",
+            "path": [
+              "body",
+              "contents",
+              2,
+              "visibilityFormula"
+            ],
+            "rhs": null
+          },
+          {
+            "kind": "D",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "charList"
+            ],
+            "lhs": ""
+          },
+          {
+            "kind": "D",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "maxLength"
+            ],
+            "lhs": ""
+          },
+          {
+            "kind": "N",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "visibilityFormula"
+            ],
+            "rhs": null
+          },
+          {
+            "kind": "N",
+            "path": [
+              "body",
+              "contents",
+              0,
+              "contents",
+              2,
+              "visibilityFormula"
+            ],
+            "rhs": null
+          },
+          {
+            "kind": "N",
+            "path": [
+              "body",
+              "contents",
+              0,
+              "contents",
+              1,
+              "visibilityFormula"
+            ],
+            "rhs": null
+          },
+          {
+            "kind": "E",
+            "path": [
+              "body",
+              "contents",
+              0,
+              "contents",
+              0,
+              "defaultValue"
+            ],
+            "lhs": "2d8",
+            "rhs": "3"
+          },
+          {
+            "kind": "D",
+            "path": [
+              "body",
+              "contents",
+              0,
+              "contents",
+              0,
+              "charList"
+            ],
+            "lhs": ""
+          },
+          {
+            "kind": "D",
+            "path": [
+              "body",
+              "contents",
+              0,
+              "contents",
+              0,
+              "maxLength"
+            ],
+            "lhs": ""
+          },
+          {
+            "kind": "E",
+            "path": [
+              "body",
+              "contents",
+              0,
+              "contents",
+              0,
+              "type"
+            ],
+            "lhs": "textField",
+            "rhs": "select"
+          },
+          {
+            "kind": "N",
+            "path": [
+              "body",
+              "contents",
+              0,
+              "contents",
+              0,
+              "visibilityFormula"
+            ],
+            "rhs": ""
+          },
+          {
+            "kind": "N",
+            "path": [
+              "body",
+              "contents",
+              0,
+              "contents",
+              0,
+              "options"
+            ],
+            "rhs": [
+              {
+                "key": "1",
+                "value": "1d10 (1)"
+              },
+              {
+                "key": "2",
+                "value": "1d12 (2)"
+              },
+              {
+                "key": "3",
+                "value": "2d6 (3)"
+              },
+              {
+                "key": "4",
+                "value": "2d8 (4)"
+              },
+              {
+                "key": "5",
+                "value": "2d12 (5)"
+              },
+              {
+                "key": "6",
+                "value": "4d8 (6)"
+              },
+              {
+                "key": "7",
+                "value": "4d12 (7)"
+              },
+              {
+                "key": "8",
+                "value": "3d10x2 (8)"
+              },
+              {
+                "key": "9",
+                "value": "3d12x2 (9)"
+              },
+              {
+                "key": "10",
+                "value": "4d10x2 (10)"
+              },
+              {
+                "key": "11",
+                "value": "4d12x2 (11)"
+              },
+              {
+                "key": "12",
+                "value": "5d10x2 (12)"
+              },
+              {
+                "key": "13",
+                "value": "3d12x3 (13)"
+              },
+              {
+                "key": "14",
+                "value": "5d12x2 (14)"
+              },
+              {
+                "key": "15",
+                "value": "5d8x3 (15)"
+              },
+              {
+                "key": "16",
+                "value": "8d8x2 (16)"
+              },
+              {
+                "key": "17",
+                "value": "6d12x2 (17)"
+              },
+              {
+                "key": "18",
+                "value": "6d6x4 (18)"
+              },
+              {
+                "key": "19",
+                "value": "5d8x4 (19)"
+              },
+              {
+                "key": "20",
+                "value": "6d10x3 (20)"
+              },
+              {
+                "key": "21",
+                "value": "8d8x3 (21)"
+              },
+              {
+                "key": "22",
+                "value": "6d12x3 (22)"
+              }
+            ]
+          },
+          {
+            "kind": "N",
+            "path": [
+              "body",
+              "contents",
+              0,
+              "contents",
+              0,
+              "tableKey"
+            ],
+            "rhs": null
+          },
+          {
+            "kind": "N",
+            "path": [
+              "body",
+              "contents",
+              0,
+              "contents",
+              0,
+              "tableKeyColumn"
+            ],
+            "rhs": null
+          },
+          {
+            "kind": "N",
+            "path": [
+              "body",
+              "contents",
+              0,
+              "contents",
+              0,
+              "tableLabelColumn"
+            ],
+            "rhs": null
+          },
+          {
+            "kind": "N",
+            "path": [
+              "body",
+              "contents",
+              0,
+              "visibilityFormula"
+            ],
+            "rhs": null
+          },
+          {
+            "kind": "N",
+            "path": [
+              "body",
+              "visibilityFormula"
+            ],
+            "rhs": null
+          }
+        ],
+        [
+          {
+            "kind": "E",
+            "path": [
+              "body",
+              "contents",
+              0,
+              "contents",
+              0,
+              "defaultValue"
+            ],
+            "lhs": "3",
+            "rhs": ""
+          }
+        ]
+      ],
+      "templateHistoryRedo": []
     },
     "exportSource": {
       "world": "prpg",
       "system": "custom-system-builder",
       "coreVersion": "11.307",
       "systemVersion": "2.3.1"
+    },
+    "scene-packer": {
+      "sourceId": "Item.xWAqcQz9lvJ1SKeh"
     }
   },
   "_stats": {
     "systemId": "custom-system-builder",
     "systemVersion": "2.3.1",
-    "coreVersion": "11.307",
+    "coreVersion": "11.305",
     "createdTime": 1670884906247,
-    "modifiedTime": 1691880136840,
+    "modifiedTime": 1690698657787,
     "lastModifiedBy": "Pc5KoEtD3AcIhK1c"
   }
 }
