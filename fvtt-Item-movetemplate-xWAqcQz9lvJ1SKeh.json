@@ -264,7 +264,7 @@
       "pp_width": "64",
       "pp_height": "64"
     },
-    "templateSystemUniqueVersion": 3523943647
+    "templateSystemUniqueVersion": 87323144
   },
   "effects": [],
   "folder": "2H6VoV8Q4jQwZt8Y",
@@ -648,7 +648,7 @@
       "templateHistoryRedo": []
     },
     "exportSource": {
-      "world": "prpg",
+      "world": "steve",
       "system": "custom-system-builder",
       "coreVersion": "11.307",
       "systemVersion": "2.3.1"
@@ -660,9 +660,9 @@
   "_stats": {
     "systemId": "custom-system-builder",
     "systemVersion": "2.3.1",
-    "coreVersion": "11.305",
+    "coreVersion": "11.307",
     "createdTime": 1670884906247,
-    "modifiedTime": 1690698657787,
+    "modifiedTime": 1691218151865,
     "lastModifiedBy": "Pc5KoEtD3AcIhK1c"
   }
 }
