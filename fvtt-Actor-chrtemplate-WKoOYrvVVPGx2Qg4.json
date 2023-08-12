@@ -1,0 +1,3753 @@
+{
+  "name": "ChrTemplate",
+  "type": "_template",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "hidden": [
+      {
+        "name": "IntimidationTRvalue",
+        "value": "${ IntimidationTR ? 5 : 0 }$"
+      },
+      {
+        "name": "BreedingTRvalue",
+        "value": "${ BreedingTR ? 5 : 0 }$"
+      },
+      {
+        "name": "First_AidTRvalue",
+        "value": "${ First_AidTR ? 5 : 0 }$"
+      },
+      {
+        "name": "InvestigationTRvalue",
+        "value": "${ InvestigationTR ? 5 : 0 }$"
+      },
+      {
+        "name": "TrainingTRvalue",
+        "value": "${ TrainingTR ? 5 : 0 }$"
+      },
+      {
+        "name": "armorpen",
+        "value": "0"
+      },
+      {
+        "name": "bHP",
+        "value": "${VIT+ SPT}$"
+      },
+      {
+        "name": "bATK",
+        "value": "${STR + AGL}$"
+      },
+      {
+        "name": "bDEF",
+        "value": "${STR + VIT}$"
+      },
+      {
+        "name": "bSAtk",
+        "value": "${AWE + INT}$"
+      },
+      {
+        "name": "bSDEF",
+        "value": "${SPT + INT}$"
+      },
+      {
+        "name": "bSPD",
+        "value": "${AGL + AWE}$"
+      }
+    ],
+    "header": {
+      "contents": [
+        {
+          "key": "chrname",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "Character's Name",
+          "visibilityFormula": null,
+          "label": "Name",
+          "defaultValue": "",
+          "size": "full-size",
+          "charList": "",
+          "maxLength": "",
+          "type": "textField"
+        },
+        {
+          "key": "gender",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": null,
+          "label": "Gender: ",
+          "defaultValue": "",
+          "size": "full-size",
+          "charList": "",
+          "maxLength": "",
+          "type": "textField"
+        },
+        {
+          "key": "level",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "Trainer Level",
+          "visibilityFormula": null,
+          "label": "Trainer Level",
+          "defaultValue": "1",
+          "size": "full-size",
+          "allowDecimal": false,
+          "minVal": "1",
+          "maxVal": "",
+          "allowRelative": false,
+          "showControls": false,
+          "type": "numberField"
+        },
+        {
+          "key": "clevel",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "Combat Level",
+          "visibilityFormula": null,
+          "label": "Combat Level",
+          "defaultValue": "1",
+          "size": "full-size",
+          "allowDecimal": false,
+          "minVal": "1",
+          "maxVal": "",
+          "allowRelative": false,
+          "showControls": false,
+          "type": "numberField"
+        },
+        {
+          "key": "inspiration",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": null,
+          "label": "Inspiration",
+          "defaultValue": "0",
+          "size": "full-size",
+          "allowDecimal": false,
+          "minVal": "0",
+          "maxVal": "2",
+          "allowRelative": false,
+          "showControls": false,
+          "type": "numberField"
+        },
+        {
+          "key": "pokedollars",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": null,
+          "label": "$",
+          "defaultValue": "",
+          "size": "full-size",
+          "allowDecimal": false,
+          "minVal": "",
+          "maxVal": "",
+          "allowRelative": false,
+          "showControls": false,
+          "type": "numberField"
+        },
+        {
+          "key": "",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": null,
+          "contents": [
+            [
+              {
+                "key": "attackmod",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": null,
+                "label": null,
+                "defaultValue": null,
+                "size": "full-size",
+                "icon": "",
+                "value": "ATK Mod: ${floor(ATK/10)}$ / SAtk: ${floor(SAtk/10)}$",
+                "prefix": "",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "style": "title",
+                "type": "label"
+              },
+              {
+                "key": "evasion",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": null,
+                "label": null,
+                "defaultValue": null,
+                "size": "full-size",
+                "icon": "",
+                "value": "${5 + floor(SPD/10) + EVAmod}$",
+                "prefix": "Evasion:",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "style": "title",
+                "type": "label"
+              },
+              {
+                "key": "EVAmod",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": null,
+                "label": "Modifier:",
+                "defaultValue": "0",
+                "size": "full-size",
+                "allowDecimal": false,
+                "minVal": "0",
+                "maxVal": "",
+                "allowRelative": false,
+                "showControls": false,
+                "type": "numberField"
+              }
+            ],
+            [
+              {
+                "key": "bodysave",
+                "cssClass": "bodysave",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "label": null,
+                "defaultValue": null,
+                "size": "full-size",
+                "icon": "",
+                "value": "${STR + VIT + clevel}$",
+                "prefix": "Save bonuses - Body: ",
+                "suffix": "",
+                "rollMessage": "Rolling Body save:\n\n${[1d20]+bodysave}$",
+                "altRollMessage": "Rolling Body save: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + bodysave}$",
+                "style": "title",
+                "type": "label"
+              },
+              {
+                "key": "reflexsave",
+                "cssClass": "reflexsave",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "label": null,
+                "defaultValue": null,
+                "size": "full-size",
+                "icon": "",
+                "value": "${AGL + AWE + clevel}$",
+                "prefix": "Reflex: ",
+                "suffix": "",
+                "rollMessage": "Rolling Reflex save: \n\n${[1d20]+reflexsave}$",
+                "altRollMessage": "Rolling Reflex save: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + reflexsave}$",
+                "style": "title",
+                "type": "label"
+              },
+              {
+                "key": "mindsave",
+                "cssClass": "mindsave",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "label": null,
+                "defaultValue": null,
+                "size": "full-size",
+                "icon": "",
+                "value": "${SPT + INT + clevel}$",
+                "prefix": "Mind: ",
+                "suffix": "",
+                "rollMessage": "Rolling Mind save: \n\n${[1d20]+mindsave}$",
+                "altRollMessage": "Rolling Mind save: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + mindsave}$",
+                "style": "title",
+                "type": "label"
+              }
+            ]
+          ],
+          "cols": "3",
+          "rows": "2",
+          "layout": "rrr",
+          "type": "table"
+        }
+      ],
+      "key": "custom_header",
+      "cssClass": null,
+      "role": 0,
+      "permission": 0,
+      "tooltip": null,
+      "flow": null,
+      "align": null,
+      "type": "panel",
+      "visibilityFormula": null
+    },
+    "body": {
+      "contents": [
+        {
+          "key": "Stats",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": null,
+          "contents": [
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": null,
+              "contents": [
+                [
+                  {
+                    "key": "STR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "STR:",
+                    "defaultValue": "0",
+                    "size": "m-large",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "currentHP",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "Current HP: ",
+                    "defaultValue": "",
+                    "size": "full-size",
+                    "allowDecimal": true,
+                    "minVal": "0",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "maxHP",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${(4 + VIT + SPT) * (clevel * 3) + 10}$",
+                    "prefix": "Max: ",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "style": "title",
+                    "type": "label"
+                  }
+                ],
+                [
+                  {
+                    "key": "AGL",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "AGL:",
+                    "defaultValue": "0",
+                    "size": "m-large",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "ATK",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${round((4 + STR + AGL * clevel) + 10 * ATKmod)}$",
+                    "prefix": "ATK: ",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "ATKmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "CS",
+                    "defaultValue": "1",
+                    "size": "full-size",
+                    "options": [
+                      {
+                        "key": "0.15",
+                        "value": "-4 (-85%)"
+                      },
+                      {
+                        "key": "0.25",
+                        "value": "-3 (-75%)"
+                      },
+                      {
+                        "key": "0.5",
+                        "value": "-2 (-50%)"
+                      },
+                      {
+                        "key": "0.75",
+                        "value": "-1 (-25%)"
+                      },
+                      {
+                        "key": "1",
+                        "value": "0"
+                      },
+                      {
+                        "key": "1.25",
+                        "value": "+1 (+25%)"
+                      },
+                      {
+                        "key": "1.50",
+                        "value": "+2 (+50%)"
+                      },
+                      {
+                        "key": "1.75",
+                        "value": "+3 (+75%)"
+                      },
+                      {
+                        "key": "2",
+                        "value": "+4 (+100%)"
+                      }
+                    ],
+                    "tableKey": null,
+                    "tableKeyColumn": null,
+                    "tableLabelColumn": null,
+                    "type": "select"
+                  }
+                ],
+                [
+                  {
+                    "key": "VIT",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "VIT:",
+                    "defaultValue": "0",
+                    "size": "m-large",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "DEF",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${round((4 + STR + VIT * clevel) + 10 * DEFmod)}$",
+                    "prefix": "DEF: ",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "DEFmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "CS",
+                    "defaultValue": "1",
+                    "size": "full-size",
+                    "options": [
+                      {
+                        "key": "0.15",
+                        "value": "-4 (-85%)"
+                      },
+                      {
+                        "key": "0.25",
+                        "value": "-3 (-75%)"
+                      },
+                      {
+                        "key": "0.5",
+                        "value": "-2 (-50%)"
+                      },
+                      {
+                        "key": "0.75",
+                        "value": "-1 (-25%)"
+                      },
+                      {
+                        "key": "1",
+                        "value": "0"
+                      },
+                      {
+                        "key": "1.25",
+                        "value": "+1 (+25%)"
+                      },
+                      {
+                        "key": "1.5",
+                        "value": "+2 (+50%)"
+                      },
+                      {
+                        "key": "1.75",
+                        "value": "+3 (+75%)"
+                      },
+                      {
+                        "key": "2",
+                        "value": "+4 (+100%)"
+                      }
+                    ],
+                    "tableKey": null,
+                    "tableKeyColumn": null,
+                    "tableLabelColumn": null,
+                    "type": "select"
+                  }
+                ],
+                [
+                  {
+                    "key": "SPT",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "SPT:",
+                    "defaultValue": "0",
+                    "size": "m-large",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "SAtk",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${round((4 + AWE + INT * clevel) + 10 * SAtkmod)}$",
+                    "prefix": "SAtk: ",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "SAtkmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "CS",
+                    "defaultValue": "1",
+                    "size": "full-size",
+                    "options": [
+                      {
+                        "key": "0.15",
+                        "value": "-4 (-85%)"
+                      },
+                      {
+                        "key": "0.25",
+                        "value": "-3 (-75%)"
+                      },
+                      {
+                        "key": "0.5",
+                        "value": "-2 (-50%)"
+                      },
+                      {
+                        "key": "0.75",
+                        "value": "-1 (-25%)"
+                      },
+                      {
+                        "key": "1",
+                        "value": "0"
+                      },
+                      {
+                        "key": "1.25",
+                        "value": "+1 (+25%)"
+                      },
+                      {
+                        "key": "1.5",
+                        "value": "+2 (+50%)"
+                      },
+                      {
+                        "key": "1.75",
+                        "value": "+3 (+75%)"
+                      },
+                      {
+                        "key": "2",
+                        "value": "+4 (+100%)"
+                      }
+                    ],
+                    "tableKey": null,
+                    "tableKeyColumn": null,
+                    "tableLabelColumn": null,
+                    "type": "select"
+                  }
+                ],
+                [
+                  {
+                    "key": "AWE",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "AWE:",
+                    "defaultValue": "0",
+                    "size": "m-large",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "SDEF",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${round((4 + SPT + INT * clevel) + 10 * SDEFmod)}$",
+                    "prefix": "SDEF: ",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "SDEFmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "CS",
+                    "defaultValue": "1",
+                    "size": "full-size",
+                    "options": [
+                      {
+                        "key": "0.15",
+                        "value": "-4 (-85%)"
+                      },
+                      {
+                        "key": "0.25",
+                        "value": "-3 (-75%)"
+                      },
+                      {
+                        "key": "0.5",
+                        "value": "-2 (-50%)"
+                      },
+                      {
+                        "key": "0.75",
+                        "value": "-1 (-25%)"
+                      },
+                      {
+                        "key": "1",
+                        "value": "0"
+                      },
+                      {
+                        "key": "1.25",
+                        "value": "+1 (+25%)"
+                      },
+                      {
+                        "key": "1.5",
+                        "value": "+2 (+50%)"
+                      },
+                      {
+                        "key": "1.75",
+                        "value": "+3 (+75%)"
+                      },
+                      {
+                        "key": "2",
+                        "value": "+4 (+100%)"
+                      }
+                    ],
+                    "tableKey": null,
+                    "tableKeyColumn": null,
+                    "tableLabelColumn": null,
+                    "type": "select"
+                  }
+                ],
+                [
+                  {
+                    "key": "INT",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "INT:",
+                    "defaultValue": "0",
+                    "size": "m-large",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "SPD",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${round((4 + AGL + AWE * clevel) + 10 * SPDmod)}$",
+                    "prefix": "SPD: ",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "SPDmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "CS",
+                    "defaultValue": "1",
+                    "size": "full-size",
+                    "options": [
+                      {
+                        "key": "0.15",
+                        "value": "-4 (-85%)"
+                      },
+                      {
+                        "key": "0.25",
+                        "value": "-3 (-75%)"
+                      },
+                      {
+                        "key": "0.5",
+                        "value": "-2 (-50%)"
+                      },
+                      {
+                        "key": "0.75",
+                        "value": "-1 (-25%)"
+                      },
+                      {
+                        "key": "1",
+                        "value": "0"
+                      },
+                      {
+                        "key": "1.25",
+                        "value": "+1 (+25%)"
+                      },
+                      {
+                        "key": "1.5",
+                        "value": "+2 (+50%)"
+                      },
+                      {
+                        "key": "1.75",
+                        "value": "+3 (+75%)"
+                      },
+                      {
+                        "key": "2",
+                        "value": "+4 (+100%)"
+                      }
+                    ],
+                    "tableKey": null,
+                    "tableKeyColumn": null,
+                    "tableLabelColumn": null,
+                    "type": "select"
+                  }
+                ]
+              ],
+              "cols": "3",
+              "rows": "6",
+              "layout": "ccc",
+              "type": "table"
+            },
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": null,
+              "contents": [
+                [
+                  {
+                    "key": "type1pretty",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "<span class=\"type ${type1.toLowerCase()}$\" style=\"margin-bottom:200%;visibility:${compareText(type1, string('None')) != 0 ? \"visible\" : \"hidden\"}$\"></span>",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "type2pretty",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "<span class=\"type ${type2.toLowerCase()}$\" style=\"margin-bottom:200%;visibility:${compareText(type2, string('None')) != 0 ? \"visible\" : \"hidden\"}$\"></span>",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "type1",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "Type: ",
+                    "defaultValue": "None",
+                    "size": "full-size",
+                    "options": [
+                      {
+                        "key": "None",
+                        "value": "None"
+                      },
+                      {
+                        "key": "Normal",
+                        "value": "Normal"
+                      },
+                      {
+                        "key": "Fighting",
+                        "value": "Fighting"
+                      },
+                      {
+                        "key": "Flying",
+                        "value": "Flying"
+                      },
+                      {
+                        "key": "Poison",
+                        "value": "Poison"
+                      },
+                      {
+                        "key": "Ground",
+                        "value": "Ground"
+                      },
+                      {
+                        "key": "Rock",
+                        "value": "Rock"
+                      },
+                      {
+                        "key": "Bug",
+                        "value": "Bug"
+                      },
+                      {
+                        "key": "Ghost",
+                        "value": "Ghost"
+                      },
+                      {
+                        "key": "Steel",
+                        "value": "Steel"
+                      },
+                      {
+                        "key": "Fire",
+                        "value": "Fire"
+                      },
+                      {
+                        "key": "Water",
+                        "value": "Water"
+                      },
+                      {
+                        "key": "Grass",
+                        "value": "Grass"
+                      },
+                      {
+                        "key": "Electric",
+                        "value": "Electric"
+                      },
+                      {
+                        "key": "Psychic",
+                        "value": "Psychic"
+                      },
+                      {
+                        "key": "Ice",
+                        "value": "Ice"
+                      },
+                      {
+                        "key": "Dragon",
+                        "value": "Dragon"
+                      },
+                      {
+                        "key": "Dark",
+                        "value": "Dark"
+                      },
+                      {
+                        "key": "Fairy",
+                        "value": "Fairy"
+                      }
+                    ],
+                    "tableKey": null,
+                    "tableKeyColumn": null,
+                    "tableLabelColumn": null,
+                    "type": "select"
+                  },
+                  {
+                    "key": "type2",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "None",
+                    "size": "full-size",
+                    "options": [
+                      {
+                        "key": "None",
+                        "value": "None"
+                      },
+                      {
+                        "key": "Normal",
+                        "value": "Normal"
+                      },
+                      {
+                        "key": "Fighting",
+                        "value": "Fighting"
+                      },
+                      {
+                        "key": "Flying",
+                        "value": "Flying"
+                      },
+                      {
+                        "key": "Poison",
+                        "value": "Poison"
+                      },
+                      {
+                        "key": "Ground",
+                        "value": "Ground"
+                      },
+                      {
+                        "key": "Rock",
+                        "value": "Rock"
+                      },
+                      {
+                        "key": "Bug",
+                        "value": "Bug"
+                      },
+                      {
+                        "key": "Ghost",
+                        "value": "Ghost"
+                      },
+                      {
+                        "key": "Steel",
+                        "value": "Steel"
+                      },
+                      {
+                        "key": "Fire",
+                        "value": "Fire"
+                      },
+                      {
+                        "key": "Water",
+                        "value": "Water"
+                      },
+                      {
+                        "key": "Grass",
+                        "value": "Grass"
+                      },
+                      {
+                        "key": "Electric",
+                        "value": "Electric"
+                      },
+                      {
+                        "key": "Psychic",
+                        "value": "Psychic"
+                      },
+                      {
+                        "key": "Ice",
+                        "value": "Ice"
+                      },
+                      {
+                        "key": "Dragon",
+                        "value": "Dragon"
+                      },
+                      {
+                        "key": "Dark",
+                        "value": "Dark"
+                      },
+                      {
+                        "key": "Fairy",
+                        "value": "Fairy"
+                      }
+                    ],
+                    "tableKey": null,
+                    "tableKeyColumn": null,
+                    "tableLabelColumn": null,
+                    "type": "select"
+                  }
+                ]
+              ],
+              "cols": "4",
+              "rows": "1",
+              "layout": "llrr",
+              "type": "table"
+            }
+          ],
+          "flow": "vertical",
+          "align": "center",
+          "type": "panel"
+        },
+        {
+          "key": "Skills",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": null,
+          "contents": [
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": null,
+              "contents": [
+                [
+                  {
+                    "key": "skillbonuslabel",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Skill Bonus",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "style": "title",
+                    "type": "label"
+                  },
+                  {
+                    "key": "TRlabel",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "TRND +5",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "style": "title",
+                    "type": "label"
+                  },
+                  {
+                    "key": "sitmodlabel",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Misc.",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "style": "title",
+                    "type": "label"
+                  },
+                  {
+                    "key": "skillbonuslabel2",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Skill Bonus",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "style": "title",
+                    "type": "label"
+                  },
+                  {
+                    "key": "TRLabel2",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "TRND +5",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "style": "title",
+                    "type": "label"
+                  },
+                  {
+                    "key": "sitmodlabel2",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Misc.",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "style": "title",
+                    "type": "label"
+                  }
+                ],
+                [
+                  {
+                    "key": "Acrobatics",
+                    "cssClass": "Acrobatics",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${AcrobaticsTR ? 5 + AGL + floor(level / 2) + Acrobaticssitmod - armorpen : AGL + floor(level / 2) + Acrobaticssitmod - armorpen}$",
+                    "prefix": "Acrobatics: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Acrobatics:\n\n${[1d20] + Acrobatics}$",
+                    "altRollMessage": "Rolling Acrobatics: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Acrobatics}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "AcrobaticsTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Acrobaticssitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "Mysticism",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${MysticismTR ? 5 + AWE + floor(level / 2) + Mysticismsitmod : AWE + floor(level / 2) + Mysticismsitmod}$",
+                    "prefix": "Mysticism: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Mysticism: \n\n${[1d20] + Mysticism}$",
+                    "altRollMessage": "Rolling Mysticism: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Mysticism}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "MysticismTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Mysticismsitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  }
+                ],
+                [
+                  {
+                    "key": "Athletics",
+                    "cssClass": "Athletics",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${AthleticsTR ? 5 + STR + floor(level / 2) + Athleticssitmod - armorpen : STR + floor(level / 2) + Athleticssitmod - armorpen}$",
+                    "prefix": "Athletics: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Athletics:\n\n${[1d20] + Athletics}$",
+                    "altRollMessage": "Rolling Athletics: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Athletics}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "AthleticsTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Athleticssitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "Pokemon_Combat",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${Pokemon_CombatTR ? 5 + INT + floor(level / 2) + Pokemon_Combatsitmod : INT + floor(level / 2) + Pokemon_Combatsitmod}$",
+                    "prefix": "Pokémon Combat: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Pokémon Combat: \n\n${[1d20] + Pokemon_Combat}$",
+                    "altRollMessage": "Rolling Pokémon Combat: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Pokemon_Combat}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "Pokemon_CombatTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Pokemon_Combatsitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  }
+                ],
+                [
+                  {
+                    "key": "Breeding",
+                    "cssClass": "Breeding",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${SPT >= AWE ? BreedingTRvalue + SPT + floor(level / 2) + Breedingsitmod : BreedingTRvalue + AWE + floor(level / 2) + Breedingsitmod}$",
+                    "prefix": "Breeding: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Breeding: \n\n${[1d20] + Breeding}$",
+                    "altRollMessage": "Rolling Breeding: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Breeding}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "BreedingTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Breedingsitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "Pokemon",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${PokemonTR ? 5 + INT + floor(level / 2) + Pokemonsitmod : INT + floor(level / 2) + Pokemonsitmod}$",
+                    "prefix": "Pokémon: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Pokémon: \n\n${[1d20] + Pokemon}$",
+                    "altRollMessage": "Rolling Pokémon: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Pokemon}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "PokemonTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Pokemonsitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  }
+                ],
+                [
+                  {
+                    "key": "Computers",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${ComputersTR ? 5 + INT + floor(level / 2) + Computerssitmod : INT + floor(level / 2) + Computerssitmod}$",
+                    "prefix": "Computers: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Computers:\n\n${[1d20] + Computers}$",
+                    "altRollMessage": "Rolling Computers: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Computers}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "ComputersTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Computerssitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "Perception",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${PerceptionTR ? 5 + AWE + floor(level / 2) + Perceptionsitmod - armorpen : AWE + floor(level / 2) + Perceptionsitmod - armorpen}$",
+                    "prefix": "Perception: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Perception: \n\n${[1d20] + Perception}$",
+                    "altRollMessage": "Rolling Perception: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Perception}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "PerceptionTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Perceptionsitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  }
+                ],
+                [
+                  {
+                    "key": "Deception",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${DeceptionTR ? 5 + SPT + floor(level / 2) + Deceptionsitmod - armorpen : SPT + floor(level / 2) + Deceptionsitmod - armorpen}$",
+                    "prefix": "Deception: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Deception:\n\n${[1d20] + Deception}$",
+                    "altRollMessage": "Rolling Deception: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Deception}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "DeceptionTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Deceptionsitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "Persuasion",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${PersuasionTR ? 5 + SPT + floor(level / 2) + Persuasionsitmod : SPT + floor(level / 2) + Persuasionsitmod}$",
+                    "prefix": "Persuasion: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Persuasion: \n\n${[1d20] + Persuasion}$",
+                    "altRollMessage": "Rolling Persuasion: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Persuasion}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "PersuasionTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Persuasionsitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  }
+                ],
+                [
+                  {
+                    "key": "Endurance",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${EnduranceTR ? 5 + VIT + floor(level / 2) + Endurancesitmod - armorpen : VIT + floor(level / 2) + Endurancesitmod - armorpen}$",
+                    "prefix": "Endurance: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Endurance:\n\n${[1d20] + Endurance}$",
+                    "altRollMessage": "Rolling Endurance: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Endurance}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "EnduranceTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Endurancesitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "Psychonesis",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${PsychonesisTR ? 5 + INT + floor(level / 2) + Psychonesissitmod : INT + floor(level / 2) + Psychonesissitmod}$",
+                    "prefix": "Psychonesis: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Psychonesis: \n\n${[1d20] + Psychonesis}$",
+                    "altRollMessage": "Rolling Psychonesis: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Psychonesis}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "PsychonesisTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Psychonesissitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  }
+                ],
+                [
+                  {
+                    "key": "First_Aid",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${INT >= AWE ? First_AidTRvalue + INT + floor(level / 2) + First_Aidsitmod : First_AidTRvalue + AWE + floor(level / 2) + First_Aidsitmod}$",
+                    "prefix": "First Aid: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling First Aid: \n\n\n${[1d20] + First_Aid}$",
+                    "altRollMessage": "Rolling First Aid: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + First_Aid}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "First_AidTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "First_Aidsitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "Science",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${ScienceTR ? 5 + INT + floor(level / 2) + Sciencesitmod : INT + floor(level / 2) + Sciencesitmod}$",
+                    "prefix": "Science: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Science: \n\n${[1d20] + Science}$",
+                    "altRollMessage": "Rolling Science: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Science}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "ScienceTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Sciencesitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  }
+                ],
+                [
+                  {
+                    "key": "History",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${HistoryTR ? 5 + INT + floor(level / 2) + Historysitmod : INT + floor(level / 2) + Historysitmod}$",
+                    "prefix": "History: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling History:\n\n${[1d20] + History}$",
+                    "altRollMessage": "Rolling History: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + History}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "HistoryTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Historysitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "Stealth",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${StealthTR ? 5 + AGL + floor(level / 2) + Stealthsitmod - armorpen : AGL + floor(level / 2) + Stealthsitmod - armorpen}$",
+                    "prefix": "Stealth: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Stealth: \n\n${[1d20] + Stealth}$",
+                    "altRollMessage": "Rolling Stealth: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Stealth}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "StealthTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Stealthsitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  }
+                ],
+                [
+                  {
+                    "key": "Insight",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${InsightTR ? 5 + AWE + floor(level / 2) + Insightsitmod : AWE + floor(level / 2) + Insightsitmod}$",
+                    "prefix": "Insight: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Insight:\n\n${[1d20] + Insight}$",
+                    "altRollMessage": "Rolling Insight: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Insight}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "InsightTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Insightsitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "Streetwise",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${StreetwiseTR ? 5 + SPT + floor(level / 2) + Streetwisesitmod : SPT + floor(level / 2) + Streetwisesitmod}$",
+                    "prefix": "Streetwise: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Streetwise: \n\n${[1d20] + Streetwise}$",
+                    "altRollMessage": "Rolling Streetwise: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Streetwise}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "StreetwiseTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Streetwisesitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  }
+                ],
+                [
+                  {
+                    "key": "Intimidation",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${STR >= SPT ? IntimidationTRvalue + STR + floor(level / 2) + Intimidationsitmod : IntimidationTRvalue + SPT + floor(level / 2) + Intimidationsitmod}$",
+                    "prefix": "Intimidation: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Intimidation: \n\n${[1d20] + Intimidation}$",
+                    "altRollMessage": "Rolling Intimidation: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Intimidation}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "IntimidationTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Intimidationsitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "Styler",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${StylerTR ? 5 + SPT + floor(level / 2) + Stylersitmod : SPT + floor(level / 2) + Stylersitmod}$",
+                    "prefix": "Styler: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Styler: \n\n${[1d20] + Styler}$",
+                    "altRollMessage": "Rolling Styler: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Styler}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "StylerTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Stylersitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  }
+                ],
+                [
+                  {
+                    "key": "Investigation",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${INT >= AWE ? InvestigationTRvalue + INT + floor(level / 2) + Investigationsitmod : InvestigationTRvalue + AWE + floor(level / 2) + Investigationsitmod}$",
+                    "prefix": "Investigation: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Investigation: \n\n${[1d20] + Investigation}$",
+                    "altRollMessage": "Rolling Investigation: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Investigation}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "InvestigationTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Investigationsitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "Survival",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${SurvivalTR ? 5 + AWE + floor(level / 2) + Survivalsitmod : AWE + floor(level / 2) + Survivalsitmod}$",
+                    "prefix": "Survival: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Survival: \n\n${[1d20] + Survival}$",
+                    "altRollMessage": "Rolling Survival: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Survival}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "SurvivalTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Survivalsitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  }
+                ],
+                [
+                  {
+                    "key": "Mechanics",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${MechanicsTR ? 5 + INT + floor(level / 2) + Mechanicssitmod : INT + floor(level / 2) + Mechanicssitmod}$",
+                    "prefix": "Mechanics: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Mechanics:\n\n${[1d20] + Mechanics}$",
+                    "altRollMessage": "Rolling Mechanics: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Mechanics}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "MechanicsTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Mechanicssitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  },
+                  {
+                    "key": "Training",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": null,
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${AWE >= SPT ? TrainingTRvalue + AWE + floor(level / 2) + Trainingsitmod : TrainingTRvalue + SPT + floor(level / 2) + Trainingsitmod}$",
+                    "prefix": "Training: ",
+                    "suffix": "",
+                    "rollMessage": "Rolling Training: \n\n${[1d20] + Training}$",
+                    "altRollMessage": "Rolling Training: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Training}$",
+                    "style": "label",
+                    "type": "label"
+                  },
+                  {
+                    "key": "TrainingTR",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox"
+                  },
+                  {
+                    "key": "Trainingsitmod",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": null,
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "full-size",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "type": "numberField"
+                  }
+                ]
+              ],
+              "cols": "6",
+              "rows": "13",
+              "layout": "llllll",
+              "type": "table"
+            }
+          ],
+          "flow": "grid-2",
+          "align": "justify",
+          "type": "panel"
+        },
+        {
+          "key": "",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": null,
+          "contents": [
+            {
+              "key": "maintab",
+              "cssClass": null,
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": null,
+              "contents": [
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "contents": [
+                    [
+                      {
+                        "key": "fatigue0",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "label": "Unfatigued",
+                        "defaultValue": null,
+                        "size": "full-size",
+                        "type": "checkbox"
+                      },
+                      {
+                        "key": "fatigue1",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "label": "1 : -2 on attacks, checks, and saves.",
+                        "defaultValue": null,
+                        "size": "full-size",
+                        "type": "checkbox"
+                      },
+                      {
+                        "key": "fatigue2",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "label": "2: -4 on attacks, checks, and saves.",
+                        "defaultValue": null,
+                        "size": "full-size",
+                        "type": "checkbox"
+                      },
+                      {
+                        "key": "fatigue3",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "label": "3 : -6 on rolls. Half all speed capabilities.",
+                        "defaultValue": null,
+                        "size": "full-size",
+                        "type": "checkbox"
+                      },
+                      {
+                        "key": "fatigue4",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "label": "4: -8 on rolls. Half all speed capabilities.",
+                        "defaultValue": null,
+                        "size": "full-size",
+                        "type": "checkbox"
+                      },
+                      {
+                        "key": "fatigue5",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "label": "5: Immediately fall unconscious.",
+                        "defaultValue": null,
+                        "size": "full-size",
+                        "type": "checkbox"
+                      }
+                    ]
+                  ],
+                  "cols": "6",
+                  "rows": "1",
+                  "layout": "",
+                  "type": "table"
+                },
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "contents": [
+                    [
+                      {
+                        "key": "specialitems",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "rowLayout": [
+                          {
+                            "key": "specitemslabel",
+                            "cssClass": null,
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "visibilityFormula": null,
+                            "label": "",
+                            "defaultValue": "",
+                            "size": "full-size",
+                            "charList": "",
+                            "maxLength": "",
+                            "type": "textField",
+                            "align": "left",
+                            "colName": "Special Items"
+                          }
+                        ],
+                        "head": true,
+                        "deleteWarning": false,
+                        "predefinedLines": [],
+                        "type": "dynamicTable"
+                      },
+                      {
+                        "key": "pokeballs",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "rowLayout": [
+                          {
+                            "key": "pokeballpic",
+                            "cssClass": null,
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "visibilityFormula": null,
+                            "label": null,
+                            "defaultValue": null,
+                            "size": "small",
+                            "icon": "",
+                            "value": " <img src=\"\" width=\"60\" height=\"48\" id=\"realimage\"> \n<script>\nvar usableid = game.items.getName(\"${item.name}$\")._id;\nvar imgpath = game.items.getName(\"${item.name}$\").img;\neval('var ' + 'usableid' + 'path' + '= ' + 'imgpath' + ';');\n\n\ndocument.getElementById(\"realimage\").src = eval('usableid' + 'path' +';')\ndocument.getElementById(\"realimage\").id = usableid+'img';\n</script>",
+                            "prefix": "",
+                            "suffix": "",
+                            "rollMessage": "",
+                            "altRollMessage": "",
+                            "style": "label",
+                            "type": "label",
+                            "align": "left",
+                            "colName": ""
+                          },
+                          {
+                            "key": "pokeballeffect",
+                            "cssClass": null,
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "visibilityFormula": null,
+                            "label": null,
+                            "defaultValue": null,
+                            "size": "full-size",
+                            "icon": "",
+                            "value": "${item.effect}$",
+                            "prefix": "",
+                            "suffix": "",
+                            "rollMessage": "",
+                            "altRollMessage": "",
+                            "style": "label",
+                            "type": "label",
+                            "align": "left",
+                            "colName": "Effect"
+                          },
+                          {
+                            "key": "pokeballamount",
+                            "cssClass": null,
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "visibilityFormula": null,
+                            "label": null,
+                            "defaultValue": null,
+                            "size": "full-size",
+                            "icon": "",
+                            "value": "${item.amount}$",
+                            "prefix": "",
+                            "suffix": "",
+                            "rollMessage": "",
+                            "altRollMessage": "",
+                            "style": "label",
+                            "type": "label",
+                            "align": "left",
+                            "colName": "Quantity"
+                          }
+                        ],
+                        "head": true,
+                        "deleteWarning": false,
+                        "headDisplay": true,
+                        "showDelete": true,
+                        "nameAlign": "left",
+                        "nameLabel": "Poké Ball",
+                        "templateFilter": [
+                          "erOGhcOfebIvb8A1"
+                        ],
+                        "itemFilter": [],
+                        "type": "itemContainer"
+                      },
+                      {
+                        "key": "medicines",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "rowLayout": [
+                          {
+                            "key": "medicinepic",
+                            "cssClass": null,
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "visibilityFormula": null,
+                            "label": null,
+                            "defaultValue": null,
+                            "size": "small",
+                            "icon": "",
+                            "value": " <img src=\"\" width=\"48\" height=\"48\" id=\"medimage\"> \n<script>\nvar usableid = game.items.getName(\"${item.name}$\")._id;\nvar imgpath = game.items.getName(\"${item.name}$\").img;\neval('var ' + 'usableid' + 'path' + '= ' + 'imgpath' + ';');\n\n\ndocument.getElementById(\"medimage\").src = eval('usableid' + 'path' +';')\ndocument.getElementById(\"medimage\").id = usableid+'img';\n</script>",
+                            "prefix": "",
+                            "suffix": "",
+                            "rollMessage": "",
+                            "altRollMessage": "",
+                            "style": "label",
+                            "type": "label",
+                            "align": "left",
+                            "colName": ""
+                          },
+                          {
+                            "key": "medicineamount",
+                            "cssClass": null,
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "visibilityFormula": null,
+                            "label": null,
+                            "defaultValue": null,
+                            "size": "full-size",
+                            "icon": "",
+                            "value": "${item.amount}$",
+                            "prefix": "",
+                            "suffix": "",
+                            "rollMessage": "",
+                            "altRollMessage": "",
+                            "style": "label",
+                            "type": "label",
+                            "align": "left",
+                            "colName": "Quantity"
+                          }
+                        ],
+                        "head": true,
+                        "deleteWarning": false,
+                        "headDisplay": true,
+                        "showDelete": true,
+                        "nameAlign": "left",
+                        "nameLabel": "Medicines",
+                        "templateFilter": [
+                          "TpNlwouBFopJdZWG"
+                        ],
+                        "itemFilter": [],
+                        "type": "itemContainer"
+                      }
+                    ],
+                    [
+                      {
+                        "key": "holditems",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "rowLayout": [
+                          {
+                            "key": "helditempic",
+                            "cssClass": null,
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "visibilityFormula": null,
+                            "label": null,
+                            "defaultValue": null,
+                            "size": "small",
+                            "icon": "",
+                            "value": " <img src=\"\" width=\"48\" height=\"48\" id=\"cheldimage\"> \n<script>\nvar usableid = game.items.getName(\"${item.name}$\")._id;\nvar imgpath = game.items.getName(\"${item.name}$\").img;\neval('var ' + 'usableid' + 'path' + '= ' + 'imgpath' + ';');\n\n\ndocument.getElementById(\"cheldimage\").src = eval('usableid' + 'path' +';')\ndocument.getElementById(\"cheldimage\").id = usableid+'img';\n</script>",
+                            "prefix": "",
+                            "suffix": "",
+                            "rollMessage": "",
+                            "altRollMessage": "",
+                            "style": "label",
+                            "type": "label",
+                            "align": "left",
+                            "colName": ""
+                          },
+                          {
+                            "key": "heldeffect",
+                            "cssClass": null,
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "visibilityFormula": null,
+                            "label": null,
+                            "defaultValue": null,
+                            "size": "full-size",
+                            "icon": "",
+                            "value": "${item.effect}$",
+                            "prefix": "",
+                            "suffix": "",
+                            "rollMessage": "",
+                            "altRollMessage": "",
+                            "style": "label",
+                            "type": "label",
+                            "align": "left",
+                            "colName": "Effect"
+                          }
+                        ],
+                        "head": true,
+                        "deleteWarning": false,
+                        "headDisplay": true,
+                        "showDelete": true,
+                        "nameAlign": "left",
+                        "nameLabel": "Hold Items",
+                        "templateFilter": [
+                          "mwpw6qLYyb8FD0q3"
+                        ],
+                        "itemFilter": [],
+                        "type": "itemContainer"
+                      },
+                      {
+                        "key": "tmlist",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "rowLayout": [],
+                        "head": true,
+                        "deleteWarning": false,
+                        "headDisplay": true,
+                        "showDelete": true,
+                        "nameAlign": "left",
+                        "nameLabel": "TMs/HMs",
+                        "templateFilter": [
+                          "xWAqcQz9lvJ1SKeh"
+                        ],
+                        "itemFilter": [],
+                        "type": "itemContainer"
+                      },
+                      {
+                        "key": "clotheslist",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "rowLayout": [
+                          {
+                            "key": "clothing",
+                            "cssClass": null,
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "visibilityFormula": null,
+                            "label": "",
+                            "defaultValue": "",
+                            "size": "full-size",
+                            "charList": "",
+                            "maxLength": "",
+                            "type": "textField",
+                            "align": "left",
+                            "colName": "Clothing"
+                          }
+                        ],
+                        "head": true,
+                        "deleteWarning": false,
+                        "predefinedLines": [],
+                        "type": "dynamicTable"
+                      }
+                    ],
+                    [
+                      {
+                        "key": "toollist",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "rowLayout": [
+                          {
+                            "key": "tools",
+                            "cssClass": null,
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "visibilityFormula": null,
+                            "label": "",
+                            "defaultValue": "",
+                            "size": "full-size",
+                            "charList": "",
+                            "maxLength": "",
+                            "type": "textField",
+                            "align": "left",
+                            "colName": "Tools"
+                          }
+                        ],
+                        "head": true,
+                        "deleteWarning": false,
+                        "predefinedLines": [],
+                        "type": "dynamicTable"
+                      },
+                      {
+                        "key": "traitlist",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "rowLayout": [],
+                        "head": true,
+                        "deleteWarning": false,
+                        "headDisplay": true,
+                        "showDelete": true,
+                        "nameAlign": "left",
+                        "nameLabel": "Traits",
+                        "templateFilter": [
+                          "YnqGhS5wPiG9yrSL",
+                          "KIHnvOKDnM9k6zVt"
+                        ],
+                        "itemFilter": [],
+                        "type": "itemContainer"
+                      },
+                      null
+                    ]
+                  ],
+                  "cols": "3",
+                  "rows": "3",
+                  "layout": "",
+                  "type": "table"
+                }
+              ],
+              "name": "Main",
+              "type": "tab"
+            },
+            {
+              "key": "resistancestab",
+              "cssClass": null,
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": null,
+              "contents": [
+                {
+                  "key": "normalresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[1]}$",
+                  "prefix": "<span class=\"type normal\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "fightingresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[2]}$",
+                  "prefix": "<span class=\"type fighting\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "flyingresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[3]}$",
+                  "prefix": "<span class=\"type flying\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "poisonresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[4]}$",
+                  "prefix": "<span class=\"type poison\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "groundresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[5]}$",
+                  "prefix": "<span class=\"type ground\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "rockresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[6]}$",
+                  "prefix": "<span class=\"type rock\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "bugresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[7]}$",
+                  "prefix": "<span class=\"type bug\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "ghostresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[8]}$",
+                  "prefix": "<span class=\"type ghost\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "steelresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[9]}$",
+                  "prefix": "<span class=\"type steel\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "fireresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[10]}$",
+                  "prefix": "<span class=\"type fire\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "waterresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[11]}$",
+                  "prefix": "<span class=\"type water\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "grassresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[12]}$",
+                  "prefix": "<span class=\"type grass\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "electricresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[13]}$",
+                  "prefix": "<span class=\"type electric\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "psychicresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[14]}$",
+                  "prefix": "<span class=\"type psychic\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "iceresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[15]}$",
+                  "prefix": "<span class=\"type ice\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "dragonresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[16]}$",
+                  "prefix": "<span class=\"type dragon\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "darkresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[17]}$",
+                  "prefix": "<span class=\"type dark\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                },
+                {
+                  "key": "fairyresist",
+                  "cssClass": "typelabel",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "x-large",
+                  "icon": "",
+                  "value": "${checktypes(type1,type2)[18]}$",
+                  "prefix": "<span class=\"type fairy\"></span>: x",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                }
+              ],
+              "name": "Resistances",
+              "type": "tab"
+            },
+            {
+              "key": "chrnotes",
+              "cssClass": null,
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": null,
+              "contents": [
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "contents": [
+                    [
+                      {
+                        "key": "age",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "label": "Age: ",
+                        "defaultValue": "",
+                        "size": "full-size",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": false,
+                        "type": "numberField"
+                      },
+                      {
+                        "key": "chrheight",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "label": "Height: ",
+                        "defaultValue": "",
+                        "size": "full-size",
+                        "charList": "",
+                        "maxLength": "",
+                        "type": "textField"
+                      }
+                    ],
+                    [
+                      {
+                        "key": "chrweight",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": null,
+                        "label": "Weight: ",
+                        "defaultValue": "",
+                        "size": "full-size",
+                        "charList": "",
+                        "maxLength": "",
+                        "type": "textField"
+                      },
+                      null
+                    ]
+                  ],
+                  "cols": "2",
+                  "rows": "4",
+                  "layout": "",
+                  "type": "table"
+                },
+                {
+                  "key": "characternotes",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": null,
+                  "label": "But first, why don't you tell me a little about yourself...",
+                  "defaultValue": "",
+                  "size": null,
+                  "style": "sheet",
+                  "type": "textArea"
+                }
+              ],
+              "name": "Character Notes",
+              "type": "tab"
+            },
+            {
+              "key": "prettyparty",
+              "cssClass": null,
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "contents": [
+                {
+                  "key": "partyelement",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "label": null,
+                  "defaultValue": null,
+                  "size": "full-size",
+                  "icon": "",
+                  "value": "",
+                  "prefix": "",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "style": "label",
+                  "type": "label"
+                }
+              ],
+              "name": "Party",
+              "type": "tab"
+            }
+          ],
+          "type": "tabbedPanel"
+        }
+      ],
+      "key": "custom_body",
+      "cssClass": null,
+      "role": 0,
+      "permission": 0,
+      "tooltip": null,
+      "flow": null,
+      "align": null,
+      "type": "panel",
+      "visibilityFormula": null
+    },
+    "display": {
+      "width": "1000",
+      "height": "800",
+      "fix_size": false,
+      "pp_width": "100",
+      "pp_height": "100"
+    },
+    "attributeBar": {
+      "HP": {
+        "value": "${currentHP}$",
+        "max": "${maxHP}$"
+      }
+    },
+    "activeEffects": {},
+    "templateSystemUniqueVersion": 2321695596
+  },
+  "prototypeToken": {
+    "name": "PkmnTemplate",
+    "displayName": 0,
+    "actorLink": false,
+    "texture": {
+      "src": "avatars/minitina.png",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0,
+      "tint": null
+    },
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 30,
+    "bar1": {
+      "attribute": "attributeBar.HP"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false,
+    "appendNumber": false,
+    "prependAdjective": false
+  },
+  "items": [],
+  "effects": [],
+  "folder": "6AQ8Br4FDsDmcHG3",
+  "flags": {
+    "custom-system-builder": {
+      "version": "2.3.1",
+      "templateHistory": [
+        [
+          {
+            "kind": "E",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "contents",
+              0,
+              "contents",
+              7,
+              3,
+              "visibilityFormula"
+            ],
+            "lhs": null,
+            "rhs": ""
+          },
+          {
+            "kind": "E",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "contents",
+              0,
+              "contents",
+              7,
+              3,
+              "altRollMessage"
+            ],
+            "lhs": "Rolling Science w/ ${!compareText(advantagecheck, string('kh')) != 0 ? \"Disadvantage\" : \"Advantage\"}$: \n\n${[2d20:advantagecheck:] + Science}$",
+            "rhs": "Rolling Science: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Science}$"
+          }
+        ],
+        [
+          {
+            "kind": "E",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "contents",
+              0,
+              "contents",
+              8,
+              3,
+              "visibilityFormula"
+            ],
+            "lhs": null,
+            "rhs": ""
+          },
+          {
+            "kind": "E",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "contents",
+              0,
+              "contents",
+              8,
+              3,
+              "altRollMessage"
+            ],
+            "lhs": "Rolling Stealth w/ ${!compareText(advantagecheck, string('kh')) != 0 ? \"Disadvantage\" : \"Advantage\"}$: \n\n${[2d20:advantagecheck:] + Stealth}$",
+            "rhs": "Rolling Stealth: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Stealth}$"
+          }
+        ],
+        [
+          {
+            "kind": "E",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "contents",
+              0,
+              "contents",
+              9,
+              3,
+              "visibilityFormula"
+            ],
+            "lhs": null,
+            "rhs": ""
+          },
+          {
+            "kind": "E",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "contents",
+              0,
+              "contents",
+              9,
+              3,
+              "altRollMessage"
+            ],
+            "lhs": "Rolling Streetwise w/ ${!compareText(advantagecheck, string('kh')) != 0 ? \"Disadvantage\" : \"Advantage\"}$: \n\n${[2d20:advantagecheck:] + Streetwise}$",
+            "rhs": "Rolling Streetwise: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Streetwise}$"
+          }
+        ],
+        [
+          {
+            "kind": "E",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "contents",
+              0,
+              "contents",
+              10,
+              3,
+              "visibilityFormula"
+            ],
+            "lhs": null,
+            "rhs": ""
+          },
+          {
+            "kind": "E",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "contents",
+              0,
+              "contents",
+              10,
+              3,
+              "altRollMessage"
+            ],
+            "lhs": "Rolling Styler w/ ${!compareText(advantagecheck, string('kh')) != 0 ? \"Disadvantage\" : \"Advantage\"}$: \n\n${[2d20:advantagecheck:] + Styler}$",
+            "rhs": "Rolling Styler: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Styler}$"
+          }
+        ],
+        [
+          {
+            "kind": "E",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "contents",
+              0,
+              "contents",
+              11,
+              3,
+              "visibilityFormula"
+            ],
+            "lhs": null,
+            "rhs": ""
+          },
+          {
+            "kind": "E",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "contents",
+              0,
+              "contents",
+              11,
+              3,
+              "altRollMessage"
+            ],
+            "lhs": "Rolling Survival w/ ${!compareText(advantagecheck, string('kh')) != 0 ? \"Disadvantage\" : \"Advantage\"}$: \n\n${[2d20:advantagecheck:] + Survival}$",
+            "rhs": "Rolling Survival: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Survival}$"
+          }
+        ],
+        [
+          {
+            "kind": "E",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "contents",
+              0,
+              "contents",
+              12,
+              3,
+              "visibilityFormula"
+            ],
+            "lhs": null,
+            "rhs": ""
+          },
+          {
+            "kind": "E",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "contents",
+              0,
+              "contents",
+              12,
+              3,
+              "altRollMessage"
+            ],
+            "lhs": "Rolling Training w/ ${!compareText(advantagecheck, string('kh')) != 0 ? \"Disadvantage\" : \"Advantage\"}$: \n\n${[2d20:advantagecheck:] + Training}$",
+            "rhs": "Rolling Training: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + Training}$"
+          }
+        ],
+        [
+          {
+            "kind": "E",
+            "path": [
+              "header",
+              "contents",
+              6,
+              "contents",
+              1,
+              0,
+              "altRollMessage"
+            ],
+            "lhs": "Rolling Body save w/ ${!compareText(advantagecheck, string('kh')) != 0 ? \"Disadvantage\" : \"Advantage\"}$: \n\n${[2d20:advantagecheck:] + bodysave}$",
+            "rhs": "Rolling Body save: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + bodysave}$"
+          }
+        ],
+        [
+          {
+            "kind": "E",
+            "path": [
+              "header",
+              "contents",
+              6,
+              "contents",
+              1,
+              1,
+              "altRollMessage"
+            ],
+            "lhs": "Rolling Reflex save w/ ${!compareText(advantagecheck, string('kh')) != 0 ? \"Disadvantage\" : \"Advantage\"}$: \n\n${[2d20:advantagecheck:] + reflexsave}$",
+            "rhs": "Rolling Reflex save: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + reflexsave}$"
+          }
+        ],
+        [
+          {
+            "kind": "E",
+            "path": [
+              "header",
+              "contents",
+              6,
+              "contents",
+              1,
+              2,
+              "altRollMessage"
+            ],
+            "lhs": "Rolling Mind save w/ ${!compareText(advantagecheck, string('kh')) != 0 ? \"Disadvantage\" : \"Advantage\"}$: \n\n${[2d20:advantagecheck:] + mindsave}$",
+            "rhs": "Rolling Mind save: \n${#concat(\n?{option:\"Roll Option\"[check]|\"1d20\",\"Normal\"|\"2d20kh\",\"Advantage\"|\"2d20kl\",\"Disadvantage\"}\n)}$\n${[:option:] + mindsave}$"
+          }
+        ],
+        [
+          {
+            "kind": "A",
+            "path": [
+              "body",
+              "contents",
+              1,
+              "contents"
+            ],
+            "index": 1,
+            "item": {
+              "kind": "D",
+              "lhs": {
+                "key": "advantagecheck",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": null,
+                "label": "Shift+Click Rolls: ",
+                "defaultValue": "",
+                "size": "full-size",
+                "options": [
+                  {
+                    "key": "kh",
+                    "value": "Advantage"
+                  },
+                  {
+                    "key": "kl",
+                    "value": "Disadvantage"
+                  }
+                ],
+                "tableKey": null,
+                "tableKeyColumn": null,
+                "tableLabelColumn": null,
+                "type": "select"
+              }
+            }
+          }
+        ]
+      ],
+      "templateHistoryRedo": []
+    },
+    "exportSource": {
+      "world": "prpg",
+      "system": "custom-system-builder",
+      "coreVersion": "11.307",
+      "systemVersion": "2.3.1"
+    },
+    "scene-packer": {
+      "sourceId": "Actor.WKoOYrvVVPGx2Qg4"
+    }
+  },
+  "_stats": {
+    "systemId": "custom-system-builder",
+    "systemVersion": "2.3.1",
+    "coreVersion": "11.307",
+    "createdTime": 1670837120146,
+    "modifiedTime": 1691870735392,
+    "lastModifiedBy": "Pc5KoEtD3AcIhK1c"
+  }
+}

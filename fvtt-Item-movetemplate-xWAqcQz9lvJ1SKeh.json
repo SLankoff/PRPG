@@ -1,0 +1,191 @@
+{
+  "name": "MoveTemplate",
+  "type": "_equippableItemTemplate",
+  "img": "worlds/prpg/Pokemon/item-bag.svg",
+  "system": {
+    "hidden": [],
+    "header": {
+      "contents": [
+        {
+          "key": "",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "contents": [
+            {
+              "key": "type",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "label": "Type: ",
+              "defaultValue": "Normal",
+              "size": "full-size",
+              "charList": "",
+              "maxLength": "",
+              "type": "textField"
+            },
+            {
+              "key": "availability",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "label": "Availability",
+              "defaultValue": "At-Will",
+              "size": "full-size",
+              "charList": "",
+              "maxLength": "",
+              "type": "textField"
+            },
+            {
+              "key": "modifier",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "label": "Attack Modifier",
+              "defaultValue": "+2",
+              "size": "full-size",
+              "charList": "",
+              "maxLength": "",
+              "type": "textField"
+            }
+          ],
+          "flow": "horizontal",
+          "align": "left",
+          "type": "panel"
+        }
+      ],
+      "key": "custom_header",
+      "cssClass": null,
+      "role": 0,
+      "permission": 0,
+      "tooltip": null,
+      "flow": null,
+      "align": null,
+      "type": "panel"
+    },
+    "body": {
+      "contents": [
+        {
+          "key": "",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "contents": [
+            {
+              "key": "damage",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "label": "Damage",
+              "defaultValue": "2d8",
+              "size": "full-size",
+              "charList": "",
+              "maxLength": "",
+              "type": "textField"
+            },
+            {
+              "key": "kind",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "label": "Kind",
+              "defaultValue": "Physical",
+              "size": "full-size",
+              "charList": "",
+              "maxLength": "",
+              "type": "textField"
+            },
+            {
+              "key": "moverange",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "label": "Range",
+              "defaultValue": "Melee",
+              "size": "full-size",
+              "charList": "",
+              "maxLength": "",
+              "type": "textField"
+            }
+          ],
+          "flow": "grid-3",
+          "align": "center",
+          "type": "panel"
+        },
+        {
+          "key": "description",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "label": "Description",
+          "defaultValue": "",
+          "size": "m-large",
+          "charList": "",
+          "maxLength": "",
+          "type": "textArea",
+          "style": "sheet"
+        },
+        {
+          "key": "effect",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "label": "Effect",
+          "defaultValue": "",
+          "size": "m-large",
+          "charList": "",
+          "maxLength": "",
+          "type": "textArea",
+          "style": "sheet"
+        }
+      ],
+      "key": "custom_body",
+      "cssClass": null,
+      "role": 0,
+      "permission": 0,
+      "tooltip": null,
+      "flow": null,
+      "align": null,
+      "type": "panel"
+    },
+    "display": {
+      "width": "1200",
+      "height": "600",
+      "fix_size": false,
+      "pp_width": "64",
+      "pp_height": "64"
+    },
+    "templateSystemUniqueVersion": 2075446994
+  },
+  "effects": [],
+  "folder": "2H6VoV8Q4jQwZt8Y",
+  "flags": {
+    "custom-system-builder": {
+      "version": "2.3.1"
+    },
+    "exportSource": {
+      "world": "prpg",
+      "system": "custom-system-builder",
+      "coreVersion": "11.307",
+      "systemVersion": "2.3.1"
+    }
+  },
+  "_stats": {
+    "systemId": "custom-system-builder",
+    "systemVersion": "2.3.1",
+    "coreVersion": "11.307",
+    "createdTime": 1670884906247,
+    "modifiedTime": 1691880136840,
+    "lastModifiedBy": "Pc5KoEtD3AcIhK1c"
+  }
+}
