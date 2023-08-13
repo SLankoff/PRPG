@@ -1,0 +1,99 @@
+// This updates the templates of actors and moves to be compatible with the advancements of 2.0. It only needs to be run once, and only if you're updating a pre-existing world.
+let confirmation = await Dialog.confirm({
+    title: 'Migrate Version?',
+    content: `<p>Are you sure?</p><br>
+    <p>This only needs to be done if you're updating your content to 2.0 for the first time!</p>`,
+});
+if (confirmation) {
+    let updatetemplate = await fetch("https://raw.githubusercontent.com/SLankoff/PRPG/updatetemplates/fvtt-Item-movetemplate-xWAqcQz9lvJ1SKeh.json")
+let updatejson = await updatetemplate.json()
+await game.items.get("xWAqcQz9lvJ1SKeh").update(updatejson)
+let updatetemplatechr = await fetch("https://raw.githubusercontent.com/SLankoff/PRPG/updatetemplates/fvtt-Actor-chrtemplate-WKoOYrvVVPGx2Qg4.json")
+let updatejson2 = await updatetemplatechr.json()
+await game.actors.get("WKoOYrvVVPGx2Qg4").update(updatejson2)
+let updatetemplatepkm = await fetch("https://raw.githubusercontent.com/SLankoff/PRPG/updatetemplates/fvtt-Actor-pkmntemplate-CX7P8uL1P23qe19j.json")
+let updatejson3 = await updatetemplatepkm.json()
+await game.actors.get("CX7P8uL1P23qe19j").update(updatejson3)
+let testarray1 = game.actors.filter((a) => a.items)
+testarray1.forEach(obj => {
+    let testarray2 = obj.items.filter((a) => a.system.template == "xWAqcQz9lvJ1SKeh");
+    if (testarray2)
+    {
+        testarray2.forEach(item => {
+            const damageTiers = {
+                1: "1d10",
+                2: "1d12",
+                3: "2d6",
+                4: "2d8",
+                5: "2d12",
+                6: "4d8",
+                7: "4d12",
+                8: "3d10x2",
+                9: "3d12x2",
+                10: "4d10x2",
+                11: "4d12x2",
+                12: "5d10x2",
+                13: "3d12x3",
+                14: "5d12x2",
+                15: "5d8x3",
+                16: "8d8x2",
+                17: "6d12x2",
+                18: "6d6x4",
+                19: "5d8x4",
+                20: "6d10x3",
+                21: "8d8x3",
+                22: "6d12x3"
+              }
+        let matchedkey =  (Object.entries(damageTiers).find(([key, value]) => value === item.system.props.damage))
+        if (matchedkey) {
+     item.update({system: {props: {damage: matchedkey[0]}}})
+                item.templateSystem.reloadTemplate()
+        }
+        if (item.system.props.damage == "See Effect"){
+        item.update({system: {props: {damage: ""}}})
+        }
+        })
+    }
+});
+//Looks like this updates all moves in the sidebar
+let foundmoves = game.items.filter(a => a.system.template == "xWAqcQz9lvJ1SKeh");
+foundmoves.forEach(async a => {
+    const damageTiers = {
+
+        1: "1d10",
+        2: "1d12",
+        3: "2d6",
+        4: "2d8",
+        5: "2d12",
+        6: "4d8",
+        7: "4d12",
+        8: "3d10x2",
+        9: "3d12x2",
+        10: "4d10x2",
+        11: "4d12x2",
+        12: "5d10x2",
+        13: "3d12x3",
+        14: "5d12x2",
+        15: "5d8x3",
+        16: "8d8x2",
+        17: "6d12x2",
+        18: "6d6x4",
+        19: "5d8x4",
+        20: "6d10x3",
+        21: "8d8x3",
+        22: "6d12x3"
+      }
+      let matchedkey =  (Object.entries(damageTiers).find(([key, value]) => value === a.system.props.damage))
+      if (matchedkey){
+ await  a.update({system: {props: {damage: matchedkey[0]}} })
+ await a.templateSystem.reloadTemplate()
+      }
+      if (a.system.props.damage == "See Effect"){
+        a.update({system: {props: {damage: ""}}})
+        }
+});
+game.actors.forEach(actor => {
+    if (actor.type != "_template")
+    actor.templateSystem.reloadTemplate()
+})
+}
