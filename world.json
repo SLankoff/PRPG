@@ -3,6 +3,7 @@
   "id": "prpg",
   "system": "custom-system-builder",
   "coreVersion": "11.307",
+"version": "2.0",
   "esmodules": [
     "assets/types.js",
     "assets/pokeutils.js"
@@ -55,7 +56,7 @@
       }
     }
   ],
-  "lastPlayed": "Sat Aug 12 2023 22:12:52 GMT-0700 (Pacific Daylight Time)",
-  "playtime": 5110,
+  "lastPlayed": "Sat Aug 12 2023 22:14:52 GMT-0700 (Pacific Daylight Time)",
+  "playtime": 5121,
   "safeMode": false
 }
