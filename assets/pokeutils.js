@@ -1,4 +1,3 @@
-//CONFIG.debug.hooks = true;
 const damageTiers = {
   1: "1d10",
   2: "1d12",
