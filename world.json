@@ -2,47 +2,60 @@
   "title": "The Pokemon RPG",
   "id": "prpg",
   "system": "custom-system-builder",
-  "coreVersion": "10.291",
+  "coreVersion": "11.307",
   "esmodules": [
-    "assets/types.js"
+    "assets/types.js",
+    "assets/pokeutils.js"
   ],
   "compatibility": {
-    "minimum": "10",
-    "verified": "10"
+    "minimum": "11",
+    "verified": "11.307"
   },
-  "systemVersion": "2.2.4",
+  "systemVersion": "2.3.1",
   "description": "<p>Put together out of Custom System Builder for the PRPG community.</p><p></p><p>Pokemon sprites 100% from the PTU system available <a href=\"https://github.com/dylanpiera/Foundry-Pokemon-Tabletop-United-System\">Here!</a></p><p></p><p>Trainer sprites 100% from the Pokemon Wiki <a href=\"https://pokemon.fandom.com/wiki/Pok%C3%A9mon_Wiki\">Here!</a></p><p></p><p>Pokemon Type CSS block from justingolden21 <a href=\"https://github.com/justingolden21/pokemon-types-css\">Here!</a></p>",
   "background": "https://isaacostlund.io/wp-content/uploads/2020/05/grasslands-OG2.png",
-  "readme": "https://raw.githubusercontent.com/SLankoff/PRPG/main/README.md",  
+  "readme": "https://raw.githubusercontent.com/SLankoff/PRPG/main/README.md",
   "manifest": "https://raw.githubusercontent.com/SLankoff/PRPG/main/world.json",
   "download": "https://github.com/SLankoff/PRPG/archive/refs/heads/main.zip",
-"packs": [
+  "packs": [
     {
       "label": "Pokemon",
       "type": "Actor",
       "name": "pokemon",
-      "path": "packs/pokemon.db",
+      "path": "packs/pokemon",
       "system": "custom-system-builder",
-      "private": false,
-      "flags": {}
+      "flags": {},
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
       "label": "Named Trainers",
       "type": "Actor",
       "name": "named-trainers",
-      "path": "packs/named-trainers.db",
+      "path": "packs/named-trainers",
       "system": "custom-system-builder",
-      "private": false,
-      "flags": {}
+      "flags": {},
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
       "label": "Trainer Classes",
       "type": "Actor",
       "name": "trainer-classes",
-      "path": "packs/trainer-classes.db",
+      "path": "packs/trainer-classes",
       "system": "custom-system-builder",
-      "private": false,
-      "flags": {}
+      "flags": {},
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
-  ]
+  ],
+  "lastPlayed": "Sat Aug 12 2023 22:12:52 GMT-0700 (Pacific Daylight Time)",
+  "playtime": 5110,
+  "safeMode": false
 }

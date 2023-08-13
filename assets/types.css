@@ -1,3 +1,20 @@
+[class='prpg-usedmove'] > button { 
+font-family:PokemonGB;
+font-size: 10px
+}
+[class='prpg-usedmove'] { 
+font-family:PokemonGB;
+font-size: 11px;
+display:flex;
+flex-direction:column
+}
+[class*="header-fields"] [class*="custom-system-customHeader"] [class*="content-link"] img {
+height: 15px;
+width: 15px
+}
+[class*="header-fields"] [class*="custom-system-customHeader"] [class*="content-link"] {
+margin-right: 12px
+}
 [class*="typelabel"]
 {
 padding:8px

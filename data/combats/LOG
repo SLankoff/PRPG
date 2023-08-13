@@ -1,0 +1,8 @@
+2023/08/12-20:53:40.425 294c Recovering log #8
+2023/08/12-20:53:40.565 294c Delete type=0 #8
+2023/08/12-20:53:40.565 294c Delete type=3 #6
+2023/08/12-22:12:52.348 41d8 Level-0 table #13: started
+2023/08/12-22:12:52.348 41d8 Level-0 table #13: 0 bytes OK
+2023/08/12-22:12:52.385 41d8 Delete type=0 #11
+2023/08/12-22:12:52.386 41d8 Manual compaction at level-0 from '!combats!c9ohfYgRRswIqGjy' @ 72057594037927935 : 1 .. '!combats!c9ohfYgRRswIqGjy' @ 0 : 0; will stop at (end)
+2023/08/12-22:12:52.386 41d8 Manual compaction at level-1 from '!combats!c9ohfYgRRswIqGjy' @ 72057594037927935 : 1 .. '!combats!c9ohfYgRRswIqGjy' @ 0 : 0; will stop at (end)
